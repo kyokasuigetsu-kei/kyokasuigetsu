@@ -48,21 +48,50 @@
           <p>以下のフォームに入力することでお問い合わせができます。<br>
           気軽に連絡してください。</p>
           
-          <php>
-            <form action="send.php" method="post">
-            お名前<br>
-            <input id="rendou" type="text" name="yourname">
-            <p><label for="meeru">メールアドレス</label><br><input id="meeru" type="email" name="mail" ></p>
-            種別<br>
-            <select name="kinds">
-              <option>楽曲依頼</option>
-              <option>楽曲使用</option>
-              <option>その他</option>
-            </select>
-            <p> お問い合わせ内容<br><textarea name="naiyou" cols="30" rows="5"></textarea></p>
-            <input type="submit" value="送信する">
-            </form>
-          </php>
+          <form id="contact-form">
+          <input type="hidden" name="_next" value="https://kyokasuigetsu-kei.github.io/thanks.html">
+          <input type="hidden" name="_captcha" value="false">
+  
+          お名前<br>
+          <input type="text" name="yourname" required><br><br>
+
+          メールアドレス<br>
+          <input type="email" name="mail" required><br><br>
+
+          種別<br>
+          <select name="kinds">
+          <option>楽曲依頼</option>
+          <option>楽曲使用</option>
+          <option>その他</option>
+          </select><br><br>
+
+          お問い合わせ内容<br>
+          <textarea name="naiyou" required></textarea><br><br>
+
+          <input type="submit" value="送信する">
+        </form>
+        <script>
+          document.getElementById("contact-form").addEventListener("submit", function(e) {
+          e.preventDefault();
+
+          const yourname = this.yourname.value;
+          const mail = this.mail.value;
+          const kinds = this.kinds.value;
+          const naiyou = this.naiyou.value;
+
+          const webhookUrl = "https://discordapp.com/api/webhooks/1372380808207401091/hiyf_3KNlchdcws9xU4uXaakHylE1irKPKcU6Lto8N15G0vDx3IvSWGcMcGZwCYdd3EJ";
+          const content = `📩 **新しいお問い合わせ**\n**名前:** ${yourname}\n**メール:** ${mail}\n**種別:** ${kinds}\n**内容:** ${naiyou}`;
+
+  fetch(webhookUrl, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ content })
+  });
+  this.action = "https://formsubmit.co/あなたのメールアドレス";
+  this.method = "POST";
+  this.submit();
+});
+        </script>
           </div>
         </blockquote>
         <footer class="footer">
