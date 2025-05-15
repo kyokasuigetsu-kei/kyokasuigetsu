@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+header {
+    right:0px;
+    top:0px;
+    height:80px;
+    width:100%;
+    background-color: aliceblue;
+    position:fixed
+
+}
+.footer{  
+    width:100%;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    background-color: aliceblue;
+}
+.wrap{
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.title{
+    margin-top: auto;
+}
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.content {
+    flex: 1;
+}
+h1{
+    font-family: vdl-megamaru, sans-serif;
+font-weight: 400;
+font-style: normal;
+text-align:center;
+}
+h2{
+    font-family: cofo-kabeltouw-stencil-20, sans-serif;
+font-weight: 400;
+font-size: 35;
+font-style: normal
+}
+h3{
+    font-family: vdl-megamaru, sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+p{
+    text-align: center;
+}
+.subtitle{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.menu{
+    text-align: center;
+    position:fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100%;
+    background-color:  #f0f8ff;
+    color:#333;
+    transition: right 0.3s ease;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 10;
+}
+.menu.open {
+    right: 0;
+}
+.hamburger{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    cursor: pointer;
+    z-index: 20;
+
+}
+.hamburger span{
+    display:block;
+    height:1.5px;
+    width:100%;
+    background-color: #333;
+    margin:10px;
+    transition: 0.2s;
+
+}
+.hamburger.active span:nth-child(1){
+    transform:translate(1px,14px)
+    rotate(45deg);
+}
+.hamburger.active span:nth-child(2){
+    opacity:0;
+}
+.hamburger.active span:nth-child(3){
+    transform: rotate(-45deg)
+    translate(6px,-6px);
+}
+
+.menu ul {
+    list-style-type: none;
+    padding:0;
+    margin-top: 80px;
+}
+.menu li {
+    padding: 20px;
+
+
+}
+.menu li a {
+    text-decoration: none;
+    display: block;
+}
+.button{
+    text-align:center;
+    width: 150px;
+    height: 60px;
+    vertical-align: middle;
+}

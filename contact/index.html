@@ -1,0 +1,74 @@
+<! doctype=html>
+<html>
+    <head>
+        <meta name="author" content="壁谷諭始">
+        <meta name="description content="お知らせ">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <title>お知らせ</title>
+        <script>
+            (function(d) {
+              var config = {
+                kitId: 'rwp2xxf',
+                scriptTimeout: 3000,
+                async: true
+              },
+              h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+            })(document);
+          </script>
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+          <script src="ham.js"></script>
+    </head>
+    <body>
+      <div class="wrap">
+      <header>
+        <nav class="menu">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="fomu">
+            <ul>
+                <li><a href="../index.html">トップ</a></li>
+                <li><a href="../inform/index.html">お知らせ</a></li>
+                <li><a href="../about_me/index.html">私について</a></li>
+                <li><a href="../strage/index.html">作品置き場</a></li>
+                <li><a href="../contact/index.html">お問い合わせ</a></li>
+            </ul>
+            </div>
+          </nav>
+        <h1><a href="../index.html" style="text-decoration:none;";><font color="black" >キョーカスイゲツ。の公式サイト</font></a></h1>
+      </header>
+        <p></p>
+        <p></p>
+        <h2>Contact</h2>
+        <blockquote>
+          <div class="fomu">
+          <p>以下のフォームに入力することでお問い合わせができます。<br>
+          気軽に連絡してください。</p>
+          
+          <php>
+            <form action="send.php" method="post">
+            お名前<br>
+            <input id="rendou" type="text" name="yourname">
+            <p><label for="meeru">メールアドレス</label><br><input id="meeru" type="email" name="mail" ></p>
+            種別<br>
+            <select name="kinds">
+              <option>楽曲依頼</option>
+              <option>楽曲使用</option>
+              <option>その他</option>
+            </select>
+            <p> お問い合わせ内容<br><textarea name="naiyou" cols="30" rows="5"></textarea></p>
+            <input type="submit" value="送信する">
+            </form>
+          </php>
+          </div>
+        </blockquote>
+        <footer class="footer">
+          <p>© 2025 キョーカスイゲツ。</p>
+          </div>
+      </div>
+
+    </body>
+</html>
