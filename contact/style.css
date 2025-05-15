@@ -28,6 +28,10 @@ font-size: 35;
 font-style: normal;
 text-align: center;
 }
+h3{
+    font-family: vdl-megamaru, sans-serif;
+    text-align:center;
+}
 .footer{  
     width:100%;
     height: 40px;
