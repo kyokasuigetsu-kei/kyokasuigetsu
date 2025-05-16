@@ -53,14 +53,20 @@ font-weight: 400;
 font-style: normal;
 }
 p{
+    font-family: vdl-megamaru, sans-serif;
     text-align: center;
 }
 .subtitle{
     margin-top: 10px;
     text-align: center;
 }
+.honbun{
+    font-family: vdl-megamaru, sans-serif;
+
+}
 
 .menu{
+    font-family: vdl-megamaru, sans-serif;
     text-align: center;
     position:fixed;
     top: 0;
