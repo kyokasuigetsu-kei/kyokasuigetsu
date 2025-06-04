@@ -23,6 +23,7 @@ h2{
 font-weight: 400;
 font-size: 35;
 font-style: normal;
+text-align:center;
 }
 .menu{
     position:fixed;
