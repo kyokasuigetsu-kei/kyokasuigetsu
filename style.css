@@ -120,7 +120,17 @@ font-weight: 400;
 font-size: 35;
 font-style: normal;
 }
+.xlogo{
+    width: 30px;
+}
+.tubelogo{
+    width:40px;
+}
+.nicologo{
+    width:60px;
+}
 .menu{
+    font-family: vdl-megamaru, sans-serif;
     position:fixed;
     top: 0;
     right: -100%;
