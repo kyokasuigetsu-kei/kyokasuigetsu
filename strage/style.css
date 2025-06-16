@@ -10,11 +10,11 @@ header {
 
 }
 .footer{  
+    font-family: sans-serif;
     width:100%;
     height: 40px;
-    position: absolute;
-    bottom: 0;
     background-color: aliceblue;
+    text-align: center;
 }
 .wrap{
     position:relative;
@@ -64,7 +64,12 @@ p{
     font-family: vdl-megamaru, sans-serif;
 
 }
-
+li{
+    display: flex;
+    padding:15px;
+    border-bottom:1px solid #000;
+    text-align: center;
+}
 .menu{
     font-family: vdl-megamaru, sans-serif;
     text-align: center;
