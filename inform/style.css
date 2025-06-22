@@ -49,6 +49,7 @@ text-align:center;
 .tweet{
 }
 .menu{
+    font-family: vdl-megamaru, sans-serif;
     position:fixed;
     top: 0;
     right: -100%;
