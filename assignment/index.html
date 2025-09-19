@@ -1,4 +1,4 @@
-<! doctype=html>
+<! DOCTYPE html>
 <html>
     <head>
         <meta name="author" content="壁谷諭始">
@@ -48,16 +48,113 @@
         <blockquote>
             <script>
                 if(confirm("課題を見ますか？？？")){
-                    console.log('なんで見るんですか？');}
+                    alert('なんで見るんですか？');}
                     else{
-                        console.log('なんで見ないんですか？');
+                        alert('なんで見ないんですか？');
                     }
             </script>
             <div class="container">
+              <h2><font color="white">現在<br>時刻</font></h2>
             <div class="clock">
                 <p class="clock-date"></p>
                 <p class="clock-time"></p>
             </div>
+            </div>
+            <div class="game">
+              <h2>数当てゲーム！！</h2>
+                <div class="sekiguti">
+                  <button type="button">遊び方を見ますか？</button>
+                  <script>
+                    const btn = document.querySelector('button');
+                    btn.addEventListener('click', () => {answer = prompt('遊び方を見ますか？');
+                    console.log(answer);
+                    if(answer == "yes"){
+                      alert("テンキーを使って入力してください\n1~100までの数字があります。\n試行制限はないです。")
+                    }
+                    });
+                  </script>
+                  <button type="button" onclick="startGame()">プレイはここをタップ！</button>
+                  <script>
+                    function startGame(){
+                    var answer= Math.floor(Math.random()* 100)+1;
+                    var count = 0;
+                    while(true){
+                    var guess = prompt("1〜100の数字を予想してください！");
+                    if(guess == null || guess == ""){
+                    alert("ゲームを終了します");
+                    break;
+                    }
+                    guess = Number(guess);
+                    count++;
+                    if(guess == answer){
+                      alert("正解です。" + count + "回で当たりましたね。"); //カウント機能がついている
+                      break;
+                    }
+                      else if (guess < answer){
+                        alert("もっと大きいです。"); //大小判定
+                      } 
+                      else if (guess > answer){
+                        alert("もっと小さいです。");
+                      }
+                      else {
+                        alert("回答してください。")
+                      }
+                    }
+                    }
+                  </script>
+                </div>
+            </div>
+            <div class="map">
+              <h2>地図</h2>
+                <p>表示する場所が思いつかなかったので、<br>クリプトンフューチャーメディアの場所でも、、</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2914.8850176044652!2d141.3501307!3d43.064885800000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0b299e3b7237a1%3A0xd52b0f77a39595f!2z44CSMDYwLTAwMDMg5YyX5rW36YGT5pyt5bmM5biC5Lit5aSu5Yy65YyX77yT5p2h6KW_77yU5LiB55uu77yR4oiS77yRIOaXpeacrOeUn-WRveacreW5jOODk-ODqyAxMWY!5e0!3m2!1sja!2sjp!4v1758243794695!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><br>
+                  <button onclick="getLocation()">現在地を取得</button>
+                  <div>
+                    <dl>
+                      <dt>緯度</dt>
+                        <dd id="lat">---</dd>
+                    </dl>
+                    <dl>
+                      <dt>経度</dt>
+                        <dd id="lng">---</dd>
+                    </dl>
+                  </div>
+                  <button onclick="showRoute()">最適経路を検索！</button>
+                <script>
+                  let Lat = null ;
+                  let Lng = null;
+                  function getLocation(){
+                    if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(success, error);
+                    } else {
+                    alert("このブラウザでは位置情報が取得できません");
+                    }
+                    }
+                  function success(position) {
+                    Lat = position.coords.latitude;
+                    Lng = position.coords.longitude;
+                    document.getElementById('lat').textContent = Lat;
+                    document.getElementById('lng').textContent = Lng;
+                    alert("位置情報の取得に成功しました！");
+                    }
+                  function error() {
+                    alert("位置情報の取得に失敗しました！");
+                    }
+                function showRoute(){
+                  if (Lat === null || Lng === null) {
+                  alert("まず現在地を取得してください！");
+                  return;
+                  }
+                  const destLat = 43.0648858;  
+                  const destLng = 141.3501307;
+                  const url = `https://www.google.com/maps/dir/${Lat},${Lng}/${destLat},${destLng}`;
+                  window.open(url, "_blank");
+                }
+                function error() {
+                  alert("位置情報の取得に失敗しました");
+                }
+              
+                </script>
             </div>
         </blockquote>
       </div>

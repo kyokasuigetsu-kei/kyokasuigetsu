@@ -39,6 +39,21 @@ body {
 .content {
     flex: 1;
 }
+button{
+    justify-content: center;
+    size: 300%;
+
+}
+.map{
+
+}
+.sekiguti{
+    font-family: vdl-megamaru, sans-serif;
+
+    border:3px dotted;
+    border-radius: 15px;
+    justify-content: center;
+}
 .container{
     margin-left: 0px;
     height:55vh;
@@ -73,6 +88,19 @@ body {
 font-style: normal;
 text-align: center;
 }
+button{
+    padding: 15px 30px;
+    font-size: 18px;   border-radius: 8px;
+    border: none;       
+    background-color: #daf6ff; 
+    color: rgb(0, 0, 0);           
+    cursor: pointer;
+    font-family: vdl-megamaru, sans-serif;
+    align-items: center;
+}
+button:hover {
+      background-color: #affff3; 
+    }
 h1{
     font-family: vdl-megamaru, sans-serif;
 font-weight: 400;
@@ -92,6 +120,7 @@ font-weight: 400;
 font-style: normal;
 }
 p{
+    font-family: vdl-megamaru, sans-serif;
     text-align: center;
 }
 .subtitle{
